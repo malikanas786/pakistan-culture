@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="image-container">
+        <img src="C:/Users/STS/Desktop/AICT Projects/Banner3.AVIF" alt="Culture Of Pakistan" style="height: 160px; width: 100%;" >
+    </div>
+    <div class="navbar" style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;" >
+        <div style="text-align: left; color: white; width: 20%;">
+            <a href="HomePage.html" style="color: inherit; text-decoration: none; font-size: x-large;font-family: 'Times New Roman', Times, serif;">Culture Of Pakistan</a>
+        </div>
+        
+        <a href="HomePage.html">Home</a>
+        
+        <!-- Culture Dropdown -->
+        <div class="dropdown">
+            <button>Culture</button>
+            <div class="dropdown-content">
+                
+                <!-- Main Categories -->
+                    <a href="C:\Users\STS\Desktop\AICT Projects\Punjab\Punjab.html">Punjabi</a>
+                    <a href="C:\Users\STS\Desktop\AICT Projects\Sindh\Sindhi.html">Sindhi</a>
+                    <a href="C:\Users\STS\Desktop\AICT Projects\Pashtun\Pashtun.html">Pashtuns</a>
+                    <a href="C:\Users\STS\Desktop\AICT Projects\Baloch\Baloch.html">Baloch</a>
+                    </div>
+        </div>
+    <a href="AboutUs.HTML">About Us</a>
+    <a href="Contact.HTML">Contact</a>
+    <a href="Form.html">Sign Up</a>
+    <a href="Log In.html">Log In</a>
+</div>
+</header>
+<div class="content-section">
+    <div class="side-image" height="100%" style="background-color: #E6E6FA;">
+        <h1>Punjab</h1>
+        <img src="C:/Users/STS/Desktop/AICT Projects/Punjab/punjab.JPG" alt="Punjabi Culture" width="90%" style="height: 200px;" >
+        
+        <h1>Sindh</h1>
+        
+        <img src="C:/Users/STS/Desktop/AICT Projects/Sindh2.JPG" alt="Sindhi Culture" width="90%" style="height: 200px;" >
+        
+    </div>
+    
+    <div class="main-content" style="background-color: #FFF7E6;">
+        <h1>For Signing Up please fill this form:</h1>
+        <form onsubmit="return validateForm()">
+            <p>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="FirstName" size="30" maxlength="35" />
+                <div class="error" id="firstnameError" ></div>
+            </p>
+            <p>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="LastName" size="30" maxlength="35" />
+                <div class="error" id="lastnameError" ></div>
+            </p>
+            <p>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" />
+                <div class="error" id="emailError" ></div>
+            </p>
+            <p>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" size="15" maxlength="30" />
+                <div class="error" id="passwordError" ></div>
+            </p>
+            <p>
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" id="mobile" name="MobileNumber" size="11" />
+                <div class="error" id="mobilenumberError" ></div>
+            </p>
+            <p>
+                <label for="gender">Gender:</label>
+                <input type="radio" name="Gender" value="Male" checked="checked" /> Male
+                <input type="radio" name="Gender" value="Female" /> Female
+            </p>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+    
+    <div class="side-image" height="100%" style="background-color: #E6E6FA;" >
+        <h1>Pushtun</h1>
+        <img src="C:/Users/STS/Desktop/AICT Projects/Pushtun1.JPG" alt="Pashtun Culture" width="90%" style="height: 200px;">
+        
+        <h1>Baloch</h1>
+        <img src="C:/Users/STS/Desktop/AICT Projects/baloch.JPG" alt="Baloch Culture" width="90%" style="height: 200px;">
+        
+    </div>
+</div>
+<div style="width: 100%; height: 20%;" class="footer" >
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-item">
+                <p>Please fill the form by clicking Sign Up</p>
+                <a href="C:\Users\STS\Desktop\AICT Projects\Form.html">Sign Up</a>
+            </div>
+            <div class="footer-item">
+                <p>All Rights are reserved.</p>
+            </div>
+            <div class="footer-item">
+                <h2 style="color: white;">Our Social Media Links</h2>
+                <a href="https://www.instagram.com/culture.of.pakistan/" target="_blank">Instagram</a><br>
+                <a href="https://www.facebook.com/culture.of.pakistan/" target="_blank">Facebook</a><br>
+                <a href="https://www.youtube.com/culture.of.pakistan/" target="_blank">YouTube</a>
+            </div>
+        </div>
+    </footer>    
+</div>
+</body>
+<script>
+    function validateForm() {
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var mobile = document.getElementById("mobile").value;
+
+        var namePattern = /^[A-Za-z]+$/;
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var mobilePattern = /^\d{11}$/;
+
+        if (!namePattern.test(firstName)) {
+            alert("First name should contain only alphabets.");
+            return false;
+        }
+        if (!namePattern.test(lastName)) {
+            alert("Last name should contain only alphabets.");
+            return false;
+        }
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+        if (!mobilePattern.test(mobile)) {
+            alert("Mobile number must be 11 digits.");
+            return false;
+        }
+        alert("Form submitted successfully!");
+        return true;
+    }
+</script>
+</html>
+
